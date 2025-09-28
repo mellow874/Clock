@@ -1,4 +1,5 @@
 function clock() {
+    //Time
     const today = new Date(); 
     
     let hours = today.getHours();
@@ -31,7 +32,21 @@ function clock() {
     document.getElementById('weekDay').textContent = weekDay;
     document.getElementById('day').textContent = day;
     document.getElementById('month').textContent = month;
-    document.getElementById('year').textContent = year;   
+    document.getElementById('year').textContent = year;  
+    
 }
  clock();
  setInterval(clock, 1000); //keeps the clock running every second 
+
+ //Theme toggler
+
+    const toggleButton = document.getElementById('switchTheme');
+    toggleButton.addEventListener('click', () => {  
+        document.body.classList.toggle('dark-mode');
+
+        if  (document.body.classList.contains('dark-mode')) {
+            toggleButton.textContent = 'Light Mode';
+        } else {
+            toggleButton.textContent = 'Dark Mode';
+        }   
+    });
